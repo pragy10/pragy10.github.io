@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <title>23BCE1491</title>
+    <body>
+        <form id="MyForm">
+            <fieldset style="font-family:Verdana; width: 700px;">
+                <legend top="align" style="color:red; "><b>Personal Details</b></legend>
+                <table cellpadding="10px">
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td>: <input type="text" id="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pwd">Password</label></td>
+                        <td>: <input type="password" id="pwd" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-mail id</label></td>
+                        <td>: <input type="text" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td>: <input type="radio" id="gender" name="male">Male <input type="radio" id="gender" name="female">Female</td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">DOB</label></td>
+                        <td>: <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mob">Mobile#</label></td>
+                        <td>: <input type="text" id="mob" name="mob" maxlength="10"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <fieldset style="font-family: verdana; width:700px">
+                <legend align="top" style="color:red"><b>Educational Qualification</b></legend>
+                <table cellpadding="15px">
+                    <tr>
+                        <td>Degree</td>
+                        <td>: 
+                            <select>
+                                <option>--Select Group--</option>
+                                <optgroup label="UG">
+                                    <option>BE</option>
+                                    <option>BTech</option>
+                                    <option>BSc</option>
+                                    <option>BA</option>
+                                    <option>BCA</option>
+                                    <option>BBA</option>
+                                    <option>Others</option>
+                                </optgroup>
+                                <optgroup label="PG">
+                                    <option>ME</option>
+                                    <option>MTech</option>
+                                    <option>MSc</option>
+                                    <option>MA</option>
+                                    <option>MCA</option>
+                                    <option>MBA</option>
+                                    <option>Others</option>
+                                </optgroup>
+                                <optgroup label="PhD">
+                                    <option>Engineering</option>
+                                    <option>Science</option>
+                                    <option>Management</option>
+                                    <option>Others</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td>Engineering</td>
+                        <td> :
+                            <select>
+                                <option>--Select Group--</option>
+                                <option>CSE</option>
+                                <option>ECE</option>
+                                <option>EEE</option>
+                                <option>CIVIL</option>
+                                <option>MECH</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <table cellpadding="15px">
+                <tr>
+                    <td>Hobbies</td>
+                    <td>: <input type="checkbox">Playing chess <input type="checkbox">Reading Books</td>
+                </tr>
+            </table>
+            <table cellpadding="15px">
+                <tr>
+                    <td>Favourite Color</td>
+                    <td>: <input type="color" id="favcolor" name="favcolor"></td>
+                </tr>
+            </table>
+            <table cellpadding="15px">
+                <tr>
+                    <fieldset style="font-family: verdana; width:700px; border-color: transparent;" >
+                        <legend align="top" style="color: red"><b>Address</b></legend>
+                        <textarea name="address" id="address" rows="5px" cols="90px"></textarea>
+                    </fieldset>
+                </tr>
+                <tr>
+                    <span>Attach Resume: <input type="file"  > <input type="submit" value="Submit"> </span>
+                </tr>
+
+            </table>
+        </form>
+    </body>
+</html>
