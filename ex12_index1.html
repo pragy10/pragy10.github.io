@@ -1,0 +1,281 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="drawing" width="600" height="400" style="border:1px solid black;"></canvas>
+    <script>
+        const canvas = document.getElementById('drawing');
+        const ctx = canvas.getContext('2d');
+        let angle = 0;
+        let boatX = 0;
+        let direction = 1;
+ 
+        function draw(){
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+
+            ctx.beginPath();
+            ctx.moveTo(484,97);
+            ctx.lineTo(467,118);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(470,79);
+            ctx.lineTo(437,88);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(467,58);
+            ctx.lineTo(439,50);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(490,40);
+            ctx.lineTo(478,18);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(545,62);
+            ctx.lineTo(572,68);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(528,41);
+            ctx.lineTo(553,27);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(507,36);
+            ctx.lineTo(507,9);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(535,91);
+            ctx.lineTo(555,105);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(517,101);
+            ctx.lineTo(525,127);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(507,69,40,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'lightblue';
+            ctx.ellipse(300,213,117,50,0,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'darkblue';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+ 
+            ctx.beginPath();
+            ctx.fillStyle = 'orange';
+            ctx.rect(72,135,90,90);
+            ctx.fill();
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'blue';
+            ctx.rect(80,147,20,25);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'brown';
+            ctx.rect(105,173,25,50);
+            ctx.fill();
+ 
+            ctx.beginPath();
+            ctx.moveTo(117,69);
+            ctx.lineTo(170,136);
+            ctx.lineTo(63,135);
+            ctx.closePath();
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            
+ 
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(414,329,30,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(383,301,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(362,296);
+            ctx.lineTo(349,313);
+            ctx.lineTo(375,314);
+            ctx.closePath();
+            ctx.fillStyle = 'orange';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(504,243,20,0,Math.PI*2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(515,270);
+            ctx.lineTo(515,356);
+            ctx.strokeStyle = 'green';
+            ctx.lineWidth = 10;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'pink';
+            ctx.arc(528,220,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'purple';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'pink';
+            ctx.arc(537,252,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'purple';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'pink';
+            ctx.arc(500,272,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'purple';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'pink';
+            ctx.arc(472,247,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'purple';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'pink';
+            ctx.arc(489,214,20,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'purple';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'green';
+            ctx.ellipse(545,305,25,10,0,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'darkgreen';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'green';
+            ctx.ellipse(486,307,25,10,0,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'darkgreen';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.fillStyle = 'gray';
+            ctx.arc(122,294,15,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'gray';
+            ctx.arc(76,345,15,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'gray';
+            ctx.arc(98,352,15,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'gray';
+            ctx.arc(235,371,15,0,Math.PI*2);
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'gray';
+            ctx.arc(382,300,5,0,Math.PI*2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.moveTo(255+boatX,203);
+            ctx.lineTo(343+boatX,202);
+            ctx.lineTo(332+boatX,223);
+            ctx.lineTo(268+boatX,223);
+            ctx.closePath();
+            ctx.fillStyle = 'purple';
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+        }
+
+        function animateBoat() {
+            boatX += direction;
+            if(boatX>50||boatX<0){
+                direction *= -1;
+            }
+            draw(); 
+            requestAnimationFrame(animateBoat);
+        }
+
+        animateBoat();
+    </script>  
+</body>
+</html>

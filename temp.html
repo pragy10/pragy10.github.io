@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Listeners Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        input, textarea {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+        }
+        
+        #display {
+            font-size: 24px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        
+        #ageDisplay {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        #charCounter {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>(i) Stopwatch</h2>
+        <div id="display">00:00:00</div>
+        <div>
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </section>
+    
+    <section>
+        <h2>(ii) Age Calculator</h2>
+        <label for="dob">Enter your Date of Birth:</label>
+        <input type="date" id="dob" placeholder="YYYY-MM-DD">
+        <div id="ageDisplay">Hover over the date field to see your age</div>
+    </section>
+    
+    <section>
+        <h2>(iii) Character Counter</h2>
+        <label for="textArea">Enter text below:</label>
+        <textarea id="textArea" placeholder="Start typing..."></textarea>
+        <div id="charCounter">Characters: 0</div>
+    </section>
+    
+    <script>
+        // (i) Stopwatch implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const display = document.getElementById('display');
+            const startBtn = document.getElementById('startBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            
+            let startTime;
+            let elapsedTime = 0;
+            let timerInterval;
+            
+            // Format time to hh:mm:ss
+            function formatTime(timeInMs) {
+                let hours = Math.floor(timeInMs / 3600000);
+                let minutes = Math.floor((timeInMs % 3600000) / 60000);
+                let seconds = Math.floor((timeInMs % 60000) / 1000);
+                
+                return (
+                    (hours < 10 ? '0' : '') + hours + ':' +
+                    (minutes < 10 ? '0' : '') + minutes + ':' +
+                    (seconds < 10 ? '0' : '') + seconds
+                );
+            }
+            
+            // Start the stopwatch
+            startBtn.addEventListener('click', function() {
+                if (!timerInterval) {
+                    startTime = Date.now() - elapsedTime;
+                    timerInterval = setInterval(function() {
+                        elapsedTime = Date.now() - startTime;
+                        display.textContent = formatTime(elapsedTime);
+                    }, 1000);
+                }
+            });
+            
+            // Stop the stopwatch
+            stopBtn.addEventListener('click', function() {
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+            });
+            
+            // Reset the stopwatch
+            resetBtn.addEventListener('click', function() {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                elapsedTime = 0;
+                display.textContent = '00:00:00';
+            });
+            
+            
+            const dobInput = document.getElementById('dob');
+            const ageDisplay = document.getElementById('ageDisplay');
+            
+            dobInput.addEventListener('mouseover', function() {
+                if (dobInput.value) {
+                    const dob = new Date(dobInput.value);
+                    const today = new Date();
+                    
+                    let age = today.getFullYear() - dob.getFullYear();
+                    
+                    // Adjust age if birthday hasn't occurred yet this year
+                    if (
+                        today.getMonth() < dob.getMonth() || 
+                        (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())
+                    ) {
+                        age--;
+                    }
+                    
+                    ageDisplay.textContent = `Your age is: ${age} years old`;
+                } else {
+                    ageDisplay.textContent = 'Please enter your date of birth first';
+                }
+            });
+            
+            // (iii) Character Counter implementation
+            const textArea = document.getElementById('textArea');
+            const charCounter = document.getElementById('charCounter');
+            
+            textArea.addEventListener('input', function() {
+                const count = textArea.value.length;
+                charCounter.textContent = `Characters: ${count}`;
+            });
+        });
+    </script>
+</body>
+</html>

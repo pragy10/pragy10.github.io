@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .input{
+                border-radius: 10px;
+                border: 1px solid black;
+                width: 250px;
+            }
+
+            table{
+                padding: 10px;
+                margin: 10px;
+                border-spacing: 15px;
+            }
+
+            th,td{
+                padding: 5px;
+                margin: 5px;
+            }
+
+            img{
+                border-radius: 100%;
+                width: 70px;
+                height: 70px;
+            }
+
+            body{
+                background-color: #548e5d;
+            }
+
+            button{
+                border-radius: 20px;
+                color: white;
+                background-color: #a3a539;
+                width: 250px;
+                font-weight: bold;
+
+            }
+
+        </style>
+        <script src="ex10_script3.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Grocery Order Form</h1>
+        <h2>Customer Name</h2>
+        <input type="text" class="input">&nbsp;
+        <input type="text" class="input">
+        <br>
+        <h2>Phone number</h2>
+        <input type="number" class="input">&nbsp;
+        <input type="number" class="input">
+        <br>
+        <h2>Email</h2>
+        <input type="email" class="input">
+
+        <hr>
+
+        <h2>Products</h2>
+        <table>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/95apple.jpeg"></td>
+                <td><input type="checkbox">Apple</td>
+                <td>$10</td>
+                <td><input type="number" style="width:30px" id="apple">  kg</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/1024px-Bananas.jpg"></td>
+                <td><input type="checkbox">Banana</td>
+                <td>$5</td>
+                <td><input type="number" style="width:30px" id="banana">  kg</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avocado_Hass_-_single_and_halved.jpg/1024px-Avocado_Hass_-_single_and_halved.jpg"></td>
+                <td><input type="checkbox">Avocado</td>
+                <td>$7</td>
+                <td><input type="number" style="width:30px" id="avocado">  kg</td>
+            </tr>
+        </table>
+
+        <center><button onclick="display()">SUBMIT</button></center>
+    </body>
+</html>

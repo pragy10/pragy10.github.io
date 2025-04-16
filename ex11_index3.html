@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1491</title>
+    <style>
+        .error{
+            color: red;
+        }
+
+        #timer{
+            position: absolute;
+            right: 600px;
+            width: 100px;
+            border: 3px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset style="width: 900px;">
+        <legend><h1>Test JavaScript Form Validation</h1></legend>
+        <div id="timer" ></div>
+        <form id="myForm" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name"></td>
+                    <td><span id="nameError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="addr">Address:</label></td>
+                    <td><textarea id="addr" name="addr" rows="1" cols="20"></textarea></td>
+                    <td><span id="addrError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="zip">Zip Code:</label></td>
+                    <td><input type="number" id="zip" name="zip"></td>
+                    <td><span id="zipError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="country">Country:</label></td>
+                    <td>
+                        <select id="country" name="country">
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                            <option value="uk">UK</option>
+                            <option value="kenya">Kenya</option>
+                        </select>
+                    </td>
+                    <td><span id="countryError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td>
+                        <input type="radio" name="gender" value="male" id="male">Male
+                        <input type="radio" name="gender" value="female" id="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pan">PAN No:</label></td>
+                    <td><input type="text" id="pan" name="pan"></td>
+                    <td><span id="panError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label>Phone:</label></td>
+                    <td><input type="number" id="ph" name="ph"></td>
+                    <td><span id="phoneError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email"></td>
+                    <td><span id="emailError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">Password (6-8 characters):</label></td>
+                    <td><input type="password" id="pwd" name="pwd"></td>
+                    <td><span id="pwdError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="vpwd">Verify Password:</label></td>
+                    <td><input type="password" id="vpwd" name="vpwd"></td>
+                    <td><span id="vpwdError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="SEND"><input type="reset" value="CLEAR"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+    <script src="ex11_script3.js">
+       
+    </script>
+</body>
+</html>

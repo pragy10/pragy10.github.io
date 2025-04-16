@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Play Free Online Games</title>
+    <link rel="stylesheet" href="pstyles.css">
+    <script>
+        // You can add interactive features here, such as handling the search bar or updating the streak meter.
+        document.querySelector('.search-bar button').addEventListener('click', function() {
+            const query = document.querySelector('.search-bar input').value;
+            alert(`Searching for: ${query}`);
+            // Implement search functionality here
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">GameHub</div>
+        <nav>
+            <ul>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#streak">Streak</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search games...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section id="featured">
+        <h2>Featured Games</h2>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="game1.jpg" alt="Game 1">
+                <h3>Game 1</h3>
+                <p>Action-packed adventure!</p>
+                <button>Play Now</button>
+            </div>
+            <div class="game-card">
+                <img src="game2.jpg" alt="Game 2">
+                <h3>Game 2</h3>
+                <p>Puzzle solving fun!</p>
+                <button>Play Now</button>
+            </div>
+            <!-- Add more game cards as needed -->
+        </div>
+    </section>
+
+    <section id="categories">
+        <h2>Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="action.jpg" alt="Action">
+                <h3>Action</h3>
+            </div>
+            <div class="category-card">
+                <img src="puzzle.jpg" alt="Puzzle">
+                <h3>Puzzle</h3>
+            </div>
+            <div class="category-card">
+                <img src="strategy.jpg" alt="Strategy">
+                <h3>Strategy</h3>
+            </div>
+            <!-- Add more category cards as needed -->
+        </div>
+    </section>
+
+    <section id="streak">
+        <h2>Your Streak</h2>
+        <div class="streak-meter">
+            <div class="streak-bar" style="width: 60%;"></div>
+        </div>
+        <p>You're on a 6-day streak! Keep it up!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 GameHub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

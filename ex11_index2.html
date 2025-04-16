@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Q1) Stopwatch</h1>
+        <div id="q1">00:00:00</div><br>
+        <div>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </section>
+    <section>
+        <h1>Q2) Age calculator</h1>
+        <input type="date" id="q2a" placeholder="YYYY-MM-DD"><br><br>
+        <div id="q2b">Hover</div>
+    </section>
+
+    <section>
+        <h1>Q3) Counter</h1>
+        <textarea id="q3a" placeholder="enter text"></textarea>
+        <div id="q3b">Characters: 0</div>
+    </section>
+
+    <script>
+        function q1(){
+            const display = document.getElementById('q1');
+            const start = document.getElementById('start');
+            const stop = document.getElementById('stop');
+            const reset = document.getElementById('reset');
+
+            let srtTime;
+            let elapTime = 0;
+            let interval;
+
+            start.addEventListener('click',function(){
+                if(!interval){
+                    srtTime = Date.now() - elapTime;
+                    interval = setInterval(function(){
+                        elapTime = Date.now() - srtTime;
+                        display.textContent = formatTime(elapTime);
+                    },1000);
+                }
+            });
+
+            stop.addEventListener('click',function(){
+                if(interval){
+                    clearInterval(interval);
+                    interval = null;
+                }
+            });
+
+            reset.addEventListener('click', function(){
+                clearInterval(interval);
+                interval = null;
+                elapTime = 0;
+                display.textContent = '00:00:00';
+            });
+
+
+        }
+
+        function formatTime(time){
+            let hours = Math.floor(time/3600000);
+            let minutes = Math.floor((time%3600000)/60000);
+            let seconds = Math.floor((time%60000)/1000);
+            
+            return(
+                (hours<10?'0':'')+hours+':'+
+                (minutes<10?'0':'')+minutes+':'+
+                (seconds<10?'0':'')+seconds
+            );
+        }
+
+        function q2(){
+            const dob = document.getElementById('q2a');
+            const ageDisplay = document.getElementById('q2b');
+            
+            dob.addEventListener('mouseover', function(){
+                if(dob.value){
+                    const bday = new Date(dob.value);
+                    const today = new Date();
+                    
+                    let age = today.getFullYear() - bday.getFullYear();
+        
+                    if(today.getMonth()<bday.getMonth()||(today.getMonth()===bday.getMonth()&&today.getDate()<bday.getDate())){
+                        age--;
+                    }
+                    ageDisplay.textContent = `Your age is: ${age} years old`;
+                }else{
+                    ageDisplay.textContent = 'Please enter your date of birth first';
+                }
+            });
+        }
+
+        function q3(){
+            const textArea = document.getElementById('q3a');
+            const charCounter = document.getElementById('q3b');
+            
+            textArea.addEventListener('input',function(){
+                const count = textArea.value.length;
+                charCounter.textContent = `Characters: ${count}`;
+            });
+        }
+
+        window.onload = function(){
+            q1();
+            q2();
+            q3();
+        }
+    </script>
+</body>
+</html>
