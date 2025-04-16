@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            
+            function displayRegno(){
+                name = document.f1.t1.value;
+                regno = document.f1.t2.value;
+                document.write('<p style="border: 5px solid red; width:200px; text-align:center; background-color:lightgrey" >'+regno+'</p>');
+                
+            }
+            
+            function displayName(){
+                document.getElementById("demo").innerHTML = '<p style="border: 5px solid black; text-align: center; color:red;width:200px;">*'+document.f1.t1.value+'*</p>';
+            }    
+ 
+        </script>
+    </head>
+    <body name="hello">
+        <form name="f1">
+            <label>Name: </label>
+            <input type="text" name="t1"><br><br>
+            <label>Reg no:</label>
+            <input type="text" name="t2"><br><br>
+            
+            
+            <button onclick="displayRegno()">Display Reg.No</button>
+        </form>
+        <button onclick="displayName()">Display Name</button>
+        <p id="demo"></p>
+        
+       
+    </body>
+       
+</html>

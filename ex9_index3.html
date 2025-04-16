@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <script>
+
+            function calculate(bmi,gender){
+                if(bmi<17.50){
+                    return "Anorexia";
+                }else if(gender=="Female"){
+                    if(bmi>=17.51 && bmi<=19.10){
+                        return "Underweight";
+                    }else if(bmi>=19.11 && bmi<=25.80){
+                        return "Ideal range";
+                    }else if(bmi>=25.81 && bmi<=27.30){
+                        return "Marginally overweight range";
+                    }else if(bmi>=27.31 && bmi<=32.30){
+                        return "Overweight range";
+                    }else{
+                        return "Very overweight or Obese range";
+                    }
+                }else if(gender=="Male"){
+                    if(bmi>=17.501 && bmi<=20.70){
+                        return "Underweight";
+                    }else if(bmi>=20.71 && bmi<=26.40){
+                        return "Ideal range";
+                    }else if(bmi>=26.41 && bmi<=27.80){
+                        return "Marginally overweight range";
+                    }else if(bmi>=27.81 && bmi<=31.10){
+                        return "Overweight range";
+                    }else{
+                        return "Very overweight or Obese range";
+                    }
+                }
+            }
+
+           function getValues(event){
+            event.preventDefault();
+            let pounds = parseFloat(document.f1.t1.value);
+            let feet = parseFloat(document.f1.t2.value);
+            let inches = parseFloat(document.f1.t3.value);
+            let ht = (feet*30.48 + inches*2.54)/100;
+            let wt = pounds*0.453592;
+            let bmi = wt/(ht*ht);
+            document.f1.t4.value = bmi.toFixed(2);
+            let gender = document.getElementById("dropdown").value;
+
+            result = calculate(bmi,gender);
+
+            document.getElementById("demo").innerHTML = '<table border="1px solid black"><tr><th>Adults</th><th>Women</th><th>Men</th></tr><tr><td>Anorexia</td><td colspan="2">Less than 17.50</td></tr><tr><td>Underweight</td><td>17.51-19.10</td><td>17.501-20.70</td></tr><tr><th>Ideal range</th><th>19.11-25.80</th><th>20.71-26.40</th></tr><tr><td>Marginally overweight range</td><td>25.81-27.30</td><td>26.41-27.80</td></tr><tr><td>Overweight range</td><td>27.31-32.30</td><td>27.81-31.10</td></tr><tr><td>Very overweight or Obese range</td><td>More than 32.30</td><td>More than 31.10</td></tr></table>'
+            document.getElementById("result").innerHTML = result;
+       
+           }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            <table border="1px solid black">
+                <tr>
+                    <th colspan="2">
+                        BMI Calculator 
+                        <select id="dropdown">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Enter your weight<br>(in pounds)</label>
+                        <input type="text" name="t1">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Enter your height<br>(feet)</label>
+                        <input type="text" name="t2"><br><br>
+                        <label>(inches)</label>
+                        <input type="text" name="t3">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <center><button onclick="getValues(event)">calculate</button></center>
+                    </td>
+                </tr>
+                <tr>
+                    <th>YOUR BMI</th>
+                    <td><input type="text" name="t4" readonly></td>
+                </tr>
+            </table>
+            <p id="demo"></p>
+            <h1 id="result">Your status: </h1>
+        </form>
+ 
+       
+   
+ 
+       
+    </body>
+</html>

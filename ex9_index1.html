@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+           function count(){
+                const arr = [55,62,68,74,59,45,41,58,60,67,65,78,82,88,91,92,90,93,87,80,78,79,72,68,61,59,55,65];
+                let h=0, p=0, c=0;
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i]>=85){
+                        h++;
+                    }else if(arr[i]>=60 && arr[i]<=84){
+                        p++;
+                    }else{
+                        c++;
+                    }
+                }
+ 
+                document.write(
+                    '<table border="1px solid black"><tr><th>States</th><th>Count</th></tr><tr><td>Hot</td><td>'+h+'</td></tr><tr><td>Pleasant</td><td>'+p+'</td></tr><tr><td>Cold</td><td>'+c+'</td></tr></table>'
+                )
+           }
+        </script>
+    </head>
+    <body>
+        <h1>Temperatures</h1>
+        <p>55,62,68,74,59,45,41,58,60,67,65,78,82,88,91,92,90,93,87,80,78,79,72,68,61,59,55,65</p>
+        <button onclick="count()">Try me to compute number of hot,cold and pleasant days</button>
+       
+ 
+       
+    </body>
+</html>

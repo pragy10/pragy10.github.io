@@ -1,0 +1,84 @@
+table{
+    border: 1px solid #75c6f4;
+    background-color: #75c6f4;
+    border-spacing: 20px;
+    width: 400px;
+    height: 300px;
+}
+
+#id1{
+    background-color: #e790b5;
+    color:white;
+    border: 5px solid #e790b5;
+    border-bottom-color: #9f5273;
+}
+
+#id2{
+    background-color: #245f81;
+    color:white;
+    border: 5px solid #245f81;
+    border-top-color: #1b4761;
+}
+
+#id3{
+    background-color: white;
+    color: black;
+    border: 5px solid white;
+    border-bottom-color: gray;
+}
+
+#id4{
+    background-color: lightpink;
+    color: black;
+    border: 5px solid lightpink;
+    border-bottom-color: gray;
+}
+
+#id5{
+    background-color: #a72ae6;
+    color: white;
+    border: 5px solid #a72ae6;
+    border-bottom-color: #6b1e91;
+}
+
+#id6{
+    background-color: yellow;
+    color: black;
+    border: 5px solid yellow;
+    border-bottom-color: rgb(92, 132, 13);
+}
+
+#id1:hover{
+    background-color: #a35174;
+    color:white;
+    border: 5px solid #a35174;
+    border-bottom-color: #64213e;
+}
+
+#id3:hover{
+    background-color: #4a4949;
+    color: white;
+    border: 5px solid #4a4949;
+    border-bottom-color: #2a2929;
+}
+
+#id4:hover{
+    background-color: #ac727b;
+    color: white;
+    border: 5px solid #ac727b;
+    border-bottom-color: #424141;
+}
+
+#id5:hover{
+    background-color: #631889;
+    color: white;
+    border: 5px solid #631889;
+    border-bottom-color: #38114b;
+}
+
+#id6:hover{
+    background-color: #bebe1c;
+    color: white;
+    border: 5px solid #bebe1c;
+    border-bottom-color: #49680a;
+}

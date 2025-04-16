@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script>
+            let seats = new Array(10).fill(0);
+            let firstSeats = 5, ecoSeats = 5;
+            let f=0, e=5;
+            let seatNo, className = 0;
+
+
+           function getValues(){
+                for(let i=0;i<10;i++){
+                    let choice = prompt("Enter first class (1) or economy (2): ");
+                    if(choice==1){
+                        first_class();
+                    }else if(choice==2){
+                        eco_class();
+                    }else{
+                        alert("INVALID CHOICE")
+                        return;
+                    }
+                    printTickets(seatNo,className);
+                }
+           }
+
+           function first_class(){
+                className = "First class";
+                if(firstSeats>0){
+                    seatNo = f+1;
+                    seats[f++] = 1;
+                    firstSeats--;
+                }else{
+                    if(ecoSeats>0 && confirm("No seats available in first class.\nDo you want seat in economy class?")){
+                        eco_class();
+                    }else{
+                        alert("Booking ended!");
+                        return;
+                    }
+                }
+           }
+
+           function eco_class(){
+                className = "Economy class";
+                if(ecoSeats>0){
+                    seatNo = e+1;
+                    seats[e++] = 1;
+                    ecoSeats--;
+                }else{
+                    if(firstSeats>0 && confirm("No seats available in economy class.\nDo you want seat in first class?")){
+                        first_class();
+                    }else{
+                        alert("Booking ended!");
+                        return;
+                    }
+                }
+           }
+
+           function printTickets(seatNo,className){
+                let name=prompt("Enter your name: ");
+                let val = alert("BOARDING PASS\nName: "+name+"\nSeat Number: "+seatNo+"\nClass: "+className);
+                return val;
+           }
+
+        </script>
+    </head>
+    <body onload="getValues()">
+       
+    </body>
+</html>
